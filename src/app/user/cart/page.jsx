@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from 'react'
 
-const cart = () => {
+export default function Cart() {
     const [cartItems, setCartItems] = useState([]);
 
     useEffect(() => {
@@ -30,5 +30,3 @@ const cart = () => {
     <div>cart</div>
   )
 }
-
-export default cart
