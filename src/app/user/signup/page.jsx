@@ -23,7 +23,7 @@ export default function UserSignup() {
       setError(null);
 
       setTimeout(() => {
-        window.location.href = '/user/login';
+        window.location.href = '/user/c';
       }, 1500);
     } catch (error) {
       setError(error.response?.data?.message || 'An error occurred. Please try again.');

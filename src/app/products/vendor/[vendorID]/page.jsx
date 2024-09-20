@@ -66,7 +66,7 @@ export default function VendorProducts({ params }) {
         {products && products[0]?.vendor?.name}
       </h1>
       {error && <p className="text-red-500 mb-4">{error}</p>}
-      <div className="mt-6 w-full flex-wrap bg-white p-8 rounded flex gap-4">
+      <div className="mt-6 w-full flex-wrap bg-white p-8 rounded flex gap-4 justify-center">
         {products.length === 0 ? (
           <p className="text-black">No products found.</p>
         ) : (

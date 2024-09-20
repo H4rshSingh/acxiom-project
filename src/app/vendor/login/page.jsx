@@ -88,7 +88,7 @@ export default function VendorLogin() {
         </button>
       </form>
       <p className="mt-4 text-black">
-        Don't have an account?{" "}
+        Dont have an account?{" "}
         <Link href="/vendor/signup" className="text-blue-500">
           Sign Up
         </Link>

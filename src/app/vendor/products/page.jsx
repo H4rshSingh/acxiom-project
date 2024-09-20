@@ -33,9 +33,9 @@ export default function VendorProducts() {
       <button onClick={() => window.history.back()} className="absolute top-4 left-4 px-4 py-2 bg-gray-300 text-black rounded">
         Back
       </button>
-      <h1 className="text-3xl font-bold text-blue-600">Your Products</h1>
+      <h1 className="text-3xl font-bold text-blue-600 mt-12">Your Products</h1>
       {error && <p className="text-red-500 mb-4">{error}</p>}
-      <div className="mt-6 w-full flex-wrap bg-white p-8 rounded flex gap-4">
+      <div className="mt-6 w-full flex-wrap bg-white p-8 rounded flex gap-4 justify-center">
         {products.length === 0 ? (
           <p>No products found.</p>
         ) : (

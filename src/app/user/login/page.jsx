@@ -77,7 +77,7 @@ export default function UserLogin() {
         </button>
       </form>
       <p className="mt-4 text-black">
-        Don't have an account? <Link href="/user/signup" className="text-blue-500">Sign Up</Link>
+        Dont have an account? <Link href="/user/signup" className="text-blue-500">Sign Up</Link>
       </p>
     </div>
   );

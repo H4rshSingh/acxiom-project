@@ -1,38 +1,40 @@
 "use client";
-import { useState } from 'react';
-import axios from 'axios';
-import Link from 'next/link';
+import { useState } from "react";
+import axios from "axios";
+import Link from "next/link";
 
 export default function AdminLogin() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
-  const [successMessage, setSuccessMessage] = useState('');
+  const [successMessage, setSuccessMessage] = useState("");
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('/api/admin/login', {
+      const response = await axios.post("/api/admin/login", {
         email,
         password,
       });
 
-      setSuccessMessage('Login successful!');
+      setSuccessMessage("Login successful!");
       setError(null);
 
-      localStorage.setItem('token', response.data.token);
+      localStorage.setItem("token", response.data.token);
 
       setTimeout(() => {
-        window.location.href = '/admin/dashboard';
+        window.location.href = "/admin/dashboard";
       }, 1500);
     } catch (error) {
-      setError(error.response?.data?.message || 'An error occurred. Please try again.');
+      setError(
+        error.response?.data?.message || "An error occurred. Please try again."
+      );
     }
   };
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-       <Link
+      <Link
         href={"/"}
         className="absolute top-4 left-4 px-4 py-2 bg-gray-300 text-black rounded"
       >
@@ -45,10 +47,15 @@ export default function AdminLogin() {
         Back
       </button>
       <h1 className="text-3xl font-bold text-blue-600">Admin Login</h1>
-      <form onSubmit={handleLogin} className="mt-6 w-full max-w-md bg-white p-8 shadow-lg rounded">
+      <form
+        onSubmit={handleLogin}
+        className="mt-6 w-full max-w-md bg-white p-8 shadow-lg rounded"
+      >
         {error && <p className="text-red-500 mb-4">{error}</p>}
-        {successMessage && <p className="text-green-500 mb-4">{successMessage}</p>}
-        
+        {successMessage && (
+          <p className="text-green-500 mb-4">{successMessage}</p>
+        )}
+
         <div className="mb-4">
           <label className="block text-gray-700">Email</label>
           <input
@@ -77,7 +84,10 @@ export default function AdminLogin() {
         </button>
       </form>
       <p className="mt-4 text-black">
-        Don't have an account? <Link href="/admin/signup" className="text-blue-500">Sign Up</Link>
+        Dont have an account?{" "}
+        <Link href="/admin/signup" className="text-blue-500">
+          Sign Up
+        </Link>
       </p>
     </div>
   );

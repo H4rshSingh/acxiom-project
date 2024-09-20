@@ -8,6 +8,12 @@ const UserDashboard = () => {
     // const categories = ["IT", "Finance", "Education", "Healthcare"]; 
     // const router = useRouter();
 
+    useEffect(() => {
+      if (!localStorage.getItem("token")) {
+        window.location.href = "/user/login";
+      }
+    }, []);
+
   const logout = async () => {
     try {
       localStorage.removeItem("token");
@@ -50,7 +56,7 @@ const UserDashboard = () => {
             </Link>
 
             <Link
-              href="/cart"
+              href="/user/cart"
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-4"
             >
               Cart
@@ -63,7 +69,7 @@ const UserDashboard = () => {
               Guest List
             </Link>
             <Link
-              href="/orders"
+              href="/user/orders"
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-4"
             >
               Order Status

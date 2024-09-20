@@ -1,19 +1,26 @@
 "use client";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 
 const VendorDashboard = () => {
+  useEffect(() => {
+    if (!localStorage.getItem("token")) {
+      window.location.href = "/vendor/login";
+    }
+  }, []);
 
-    const logout = async () => {
-        try {
-            // const response = await axios.get('/api/vendor/logout');
-            // console.log(response.data);
-            localStorage.removeItem('token');
-            window.location.href = '/vendor/login';
-        } catch (error) {
-            console.log(error.response?.data?.message || 'An error occurred. Please try again.');
-        }
-    };
+  const logout = async () => {
+    try {
+      // const response = await axios.get('/api/vendor/logout');
+      // console.log(response.data);
+      localStorage.removeItem("token");
+      window.location.href = "/vendor/login";
+    } catch (error) {
+      console.log(
+        error.response?.data?.message || "An error occurred. Please try again."
+      );
+    }
+  };
 
   return (
     <>
@@ -43,7 +50,8 @@ const VendorDashboard = () => {
             >
               Transaction
             </Link>
-            <div onClick={logout}
+            <div
+              onClick={logout}
               className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-4"
             >
               Logout
