@@ -25,10 +25,9 @@ export default function AdminSignup() {
 
       setSuccessMessage("Admin registered successfully!");
       setError(null);
-
-      setTimeout(() => {
-        window.location.href = "/admin/login";
-      }, 1500);
+      window.location.href = "/admin/login";
+      // setTimeout(() => {
+      // }, 1500);
     } catch (error) {
       setError(
         error.response?.data?.message || "An error occurred. Please try again."

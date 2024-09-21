@@ -22,9 +22,9 @@ export default function AdminLogin() {
 
       localStorage.setItem("token", response.data.token);
 
-      setTimeout(() => {
-        window.location.href = "/admin/dashboard";
-      }, 1500);
+      window.location.href = "/admin/dashboard";
+      // setTimeout(() => {
+      // }, 1500);
     } catch (error) {
       setError(
         error.response?.data?.message || "An error occurred. Please try again."

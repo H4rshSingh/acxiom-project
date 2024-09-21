@@ -22,7 +22,7 @@ export default function VendorOrdersPage() {
 
         const data = await response.json();
         if (response.ok) {
-          setOrders(data.orders);
+          setOrders(data.orders.reverse());
         } else {
           setError(data.message);
         }

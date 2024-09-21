@@ -24,14 +24,12 @@ export default function VendorSignup() {
         businessName,
       });
 
-      // Handle success response
       setSuccessMessage("Vendor registered successfully!");
-      setError(null); // Clear any previous error
+      setError(null); 
 
-      // Redirect to login page after successful registration
       setTimeout(() => {
         window.location.href = "/vendor/login";
-      }, 1500);
+      }, 500);
     } catch (error) {
       // Handle error response
       setError(
@@ -104,7 +102,7 @@ export default function VendorSignup() {
             required
           />
         </div>
-        <div className="mb-4">
+        {/* <div className="mb-4">
           <label className="block text-gray-700">Category</label>
           <select
             className="w-full px-3 py-2 border border-gray-300 rounded mt-1 text-black"
@@ -121,7 +119,7 @@ export default function VendorSignup() {
               </option>
             ))}
           </select>
-        </div>
+        </div> */}
 
         <button
           type="submit"

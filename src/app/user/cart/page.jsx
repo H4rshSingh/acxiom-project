@@ -87,7 +87,7 @@ export default function Cart() {
     <div>
       <button
         onClick={() => window.history.back()}
-        className="absolute top-4 right-4 px-4 py-2 bg-gray-300 text-black rounded"
+        className="absolute top-4 left-4 px-4 py-2 bg-gray-300 text-black rounded"
       >
         Back
       </button>

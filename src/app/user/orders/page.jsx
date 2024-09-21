@@ -22,7 +22,7 @@ export default function UserOrdersPage() {
         const data = await response.json();
         if (response.ok) {
           console.log(data.orders);
-          setOrders(data.orders);
+          setOrders(data.orders.reverse());
         } else {
           setError(data.message);
         }

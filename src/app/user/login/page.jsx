@@ -21,10 +21,10 @@ export default function UserLogin() {
       setError(null);
 
       localStorage.setItem('token', response.data.token);
+      window.location.href = '/user/dashboard';
 
-      setTimeout(() => {
-        window.location.href = '/user/dashboard';
-      }, 1500);
+      // setTimeout(() => {
+      // }, 1500);
     } catch (error) {
       setError(error.response?.data?.message || 'An error occurred. Please try again.');
     }

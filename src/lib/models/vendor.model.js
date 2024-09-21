@@ -27,10 +27,10 @@ const vendorSchema = new mongoose.Schema({
     type: String,
     default: '',
   },
-  category: {
-    type: String,
-    required: true,
-  },
+  // category: {
+  //   type: String,
+  //   required: true,
+  // },
 });
 
 const Vendor =  mongoose.models.Vendor ||  mongoose.model('Vendor', vendorSchema) ;

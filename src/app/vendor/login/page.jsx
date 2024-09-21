@@ -17,19 +17,16 @@ export default function VendorLogin() {
         password,
       });
 
-      // Handle success response
       setSuccessMessage("Login successful!");
-      setError(null); // Clear any previous error
+      setError(null); 
 
-      // Save the JWT token in localStorage
       localStorage.setItem("token", response.data.token);
 
-      // Redirect to vendor dashboard or home page
-      setTimeout(() => {
-        window.location.href = "/vendor/dashboard"; // Update this path as necessary
-      }, 1500);
+      window.location.href = "/vendor/dashboard"; 
+
+      // setTimeout(() => {
+      // }, 1500);
     } catch (error) {
-      // Handle error response
       setError(
         error.response?.data?.message || "An error occurred. Please try again."
       );
